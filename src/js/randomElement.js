@@ -1,0 +1,17 @@
+export const randomEl = (elements, image) => {
+  setInterval(() => {
+    let currentElements = [];
+    let el;
+
+    for (el of elements) {
+      if (!el.hasChildNodes()) {
+        currentElements.push(el);
+      }
+    }
+
+    let random = Math.floor(Math.random() * currentElements.length);
+    const element = currentElements[random];
+    element.appendChild(image);
+  }, 1000);
+  return true;
+};
